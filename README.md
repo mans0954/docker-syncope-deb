@@ -34,12 +34,12 @@ Start Syncope:
 
 ```docker run -ti --link postgres-syncope:postgres --link connid-connector-server:connid-connector-server mans0954/syncope-deb```
 
-Browse to http://172.17.0.3:8080/syncope-console/ (your IP address may be different)
+Browse to http://172.17.0.4:8080/syncope-console/ (your IP address may be different)
 
 Login, through basic auth, with username 'admin' and password 'password'.
 
 Swagger is avaliable at:
 
-http://172.17.0.3:8080/syncope/swagger/
+http://172.17.0.4:8080/syncope/swagger/
 
 
