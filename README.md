@@ -23,11 +23,16 @@ Start postgres:
 
 Check that the database is up:
 
-docker logs postgres-comanage
+```docker logs postgres-syncope```
+
+Start ConnId server:
+
+```docker run -d --name connid-connector-server  mans0954/connid-connector-server```
+
 
 Start Syncope:
 
-```docker run -ti --link postgres-syncope:postgres mans0954/syncope-deb```
+```docker run -ti --link postgres-syncope:postgres --link connid-connector-server:connid-connector-server mans0954/syncope-deb```
 
 Browse to http://172.17.0.3:8080/syncope-console/ (your IP address may be different)
 

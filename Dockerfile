@@ -27,6 +27,9 @@ RUN sed -i 's|Master.url=jdbc:postgresql://localhost:5432/syncope|Master.url=jdb
 COPY syncope.xml /etc/tomcat8/Catalina/localhost/syncope.xml
 RUN chown tomcat8:tomcat8 /etc/tomcat8/Catalina/localhost/syncope.xml
 
+# Add connector server
+ADD connid.properties /etc/apache-syncope/connid.properties 
+
 USER tomcat8
 RUN mkdir /tmp/tomcat8-tomcat8-tmp
 #ENV JAVA_OPTS="-Djava.awt.headless=true -Dfile.encoding=UTF-8 -server \
