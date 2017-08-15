@@ -1,0 +1,28 @@
+version: '3'
+services:
+  syncope-deb:
+    build: .
+    container_name: syncope
+    domainname: docker
+    links:
+    - postgres:postgres
+    - connid-connector-server:connid-connector-server 
+  postgres:
+    image: postgres
+    container_name: syncope-deb-postgres
+    domainname: docker
+    environment:
+      - POSTGRES_USER=syncope
+      - POSTGRES_PASSWORD=syncope
+      - POSTGRES_DB=syncope
+    volumes:
+      - syncope-data:/var/lib/postgresql/data
+  connid-connector-server:
+    image: mans0954/connid-connector-server
+    container_name: connid-connector-server
+    domainname: docker
+
+
+volumes:
+  syncope-data: {}
+  
