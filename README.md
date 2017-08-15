@@ -40,6 +40,6 @@ Login, through basic auth, with username 'admin' and password 'password'.
 
 Swagger is avaliable at:
 
-http://172.17.0.4:8080/syncope/swagger/
+http://syncope.docker:8080/syncope/swagger/
 
 
