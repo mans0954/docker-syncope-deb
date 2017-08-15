@@ -15,7 +15,11 @@ The container requires a separate container to provide a Postgresql database. Th
 
 Note, this version does not enable Activiti due to licensing reasons.
 
-#Use
+#Use - docker-compose
+
+docker-compose up
+
+#User - manual
 
 Start postgres:
 
@@ -42,4 +46,90 @@ Swagger is avaliable at:
 
 http://syncope.docker:8080/syncope/swagger/
 
+#ConnID setup
+
+* In the admin console, click on 'Configuration'
+
+* Select 'Policies'
+
+* Click on the 'Account' tab and create a new Account Policy called 'Default Account Policy'
+
+* Click on the 'Password' tab and create a new Password Policy called 'Defualt Password Policy'
+
+* Click on the 'Pull' tab and create a new Pull Policy called 'Default Pull Policy'
+
+
+* In the admin console, click on 'Topology'
+
+* Click on the ConnID connector
+
+* Click 'Add New Connector'
+
+* Displayname: 'Test CSV Connector'
+
+* Bundle: net.tirasa.connid.bundles.csvdir
+
+* Version: 0.8.5
+
+* Next
+
+* Source Path: /opt/connid-connector-server/test-files/
+
+* File mask: test-file.*.csv
+
+* Key column name: id
+
+* Password column name: password
+
+* Column names: id, username, password, email
+
+* Next
+
+* >>
+
+* Finish
+
+* Click on 'Test CSV Connector'
+
+* Select 'Add new resource'
+
+* Key 'Test CSV Resource'
+
+* Next
+
+* Next
+
+* Chose the Default Account, Password and Pull Policies created above
+
+* Finish
+
+* Click on 'Test CSV Resource'
+
+* Click on 'Edit provision rules'
+
+* Click '+'
+
+* Type:USER
+
+* Next
+
+* BaseGroup >
+
+* Add username, username, Remote Key
+
+* Add password, password, Password
+
+* Add email, email, email
+
+* Next, Finish, Save
+
+* Select 'Test CSV Resource'
+
+* Click 'Explore Resource'
+
+* Verify that the users can be seen
+
+* Click on a user and verify that their username and email has been set
+
+* Log out and log in as a user to verify that their password has been set.
 
