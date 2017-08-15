@@ -4,7 +4,7 @@ FROM debian
 MAINTAINER christopher.hoskin@gmail.com
 
 # Install Tomcat
-RUN apt-get update && apt-get install -y tomcat8
+RUN apt-get update && apt-get install -y tomcat8 libservlet3.1-java
 EXPOSE 8080
 
 # Set up Postgresql driver
@@ -15,9 +15,9 @@ RUN apt-get install -y postgresql-client
 
 # Install Apache Syncope
 RUN apt-get install -y wget
-RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.2/apache-syncope-2.0.2.deb
-RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.2/apache-syncope-console-2.0.2.deb
-RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.2/apache-syncope-enduser-2.0.2.deb
+RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.4/apache-syncope-2.0.4.deb
+RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.4/apache-syncope-console-2.0.4.deb
+RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.4/apache-syncope-enduser-2.0.4.deb
 RUN dpkg -i apache-syncope-*.deb
 RUN rm apache-syncope-*.deb
 
