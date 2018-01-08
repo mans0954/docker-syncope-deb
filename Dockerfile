@@ -14,10 +14,12 @@ RUN ln -s /usr/share/java/postgresql-jdbc4.jar /usr/share/tomcat8/lib/
 RUN apt-get install -y postgresql-client
 
 # Install Apache Syncope
+ENV syncope_version 2.0.7
+
 RUN apt-get install -y wget
-RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.4/apache-syncope-2.0.4.deb
-RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.4/apache-syncope-console-2.0.4.deb
-RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/2.0.4/apache-syncope-enduser-2.0.4.deb
+RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/${syncope_version}/apache-syncope-${syncope_version}.deb
+RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/${syncope_version}/apache-syncope-console-${syncope_version}.deb
+RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/syncope/${syncope_version}/apache-syncope-enduser-${syncope_version}.deb
 RUN dpkg -i apache-syncope-*.deb
 RUN rm apache-syncope-*.deb
 
