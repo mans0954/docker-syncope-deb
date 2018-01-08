@@ -18,7 +18,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 <Context reloadable="false"
-         docBase="/usr/share/apache-syncope/syncope-deb-core-2.0.4.war">
+         docBase="/usr/share/apache-syncope/syncope-deb-core-2.0.7.war">
 
   <!-- Disable session persistence across Tomcat restarts -->
   <Manager pathname=""/>
