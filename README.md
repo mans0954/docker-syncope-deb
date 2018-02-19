@@ -15,11 +15,11 @@ The container requires a separate container to provide a Postgresql database. Th
 
 Note, this version does not enable Activiti due to licensing reasons.
 
-#Use - docker-compose
+# Use - docker-compose
 
 docker-compose up
 
-#User - manual
+# User - manual
 
 Start postgres:
 
@@ -46,7 +46,7 @@ Swagger is avaliable at:
 
 http://syncope.docker:8080/syncope/swagger/
 
-#ConnID setup
+# ConnID setup
 
 * In the admin console, click on 'Configuration'
 
