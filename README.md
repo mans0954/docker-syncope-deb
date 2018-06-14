@@ -36,7 +36,7 @@ Start ConnId server:
 
 Start Syncope:
 
-```docker run -ti --link postgres-syncope:postgres --link connid-connector-server:connid-connector-server --name syncope mans0954/syncope-deb```
+```docker run -ti --link postgres-syncope:postgres --link connid-connector-server:connid-connector-server -p 8080:8080 --name syncope mans0954/syncope-deb```
 
 Browse to http://syncope.docker:8080/syncope-console/ (your IP address may be different)
 
